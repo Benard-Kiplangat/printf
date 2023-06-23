@@ -21,9 +21,8 @@ int our_printf(const char *format, ...)
 	va_start(ap, format);
 
 	/* testing _putchar.c */
-	for (i = 0; format[i] != '\0'; i++)
-		_putchar(format[i]);
-	printed_chars += i;
+	printed_chars = printed_chars + print_chars(format);
+	print_chars(format);
 
 	va_end(ap);
 	return (printed_chars);
