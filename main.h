@@ -23,7 +23,7 @@ typedef struct converters converter;
 
 int print_chars(const char *string);
 int print_int(const int a);
-char *rev_string(const char *string);
+int print_rev_str(const char *string);
 int _strlen(const char *string);
 int our_printf(const char *format, ...);
 int _putchar(char c);

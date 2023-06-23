@@ -3,7 +3,9 @@
 
 int main(void)
 {
-	printf("This is a test string\n");
+	char *strng = "This is another test string\n";
+
+	print_rev_str(strng);
 	our_printf("This is a test string\n");
 
 	return (0);
