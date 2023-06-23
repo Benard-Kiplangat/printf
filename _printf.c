@@ -23,6 +23,7 @@ int our_printf(const char *format, ...)
 	/* testing _putchar.c */
 	printed_chars = printed_chars + print_chars(format);
 	print_chars(format);
+	print_int(7316);
 
 	va_end(ap);
 	return (printed_chars);
