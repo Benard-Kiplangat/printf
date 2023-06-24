@@ -9,8 +9,9 @@
  * Return: the number of characters printed
  */
 
-int print_int(const int a)
+int print_int(va_list ap)
 {
+	int a = va_arg(ap, int);
 	int i, j = 0;
 	int b = a;
 	int rev_num = 0;

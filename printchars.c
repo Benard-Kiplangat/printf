@@ -8,8 +8,9 @@
  * Return: the number of character printed or -1
  */
 
-int print_chars(const char *string)
+int print_chars(va_list ap)
 {
+	char *string = va_arg(ap, char *);
 	unsigned int i;
 
 	for (i = 0; string[i] != '\0'; i++)

@@ -9,8 +9,9 @@
  * Return: number of digits printed
  */
 
-int print_binary(const int a)
+int print_binary(va_list ap)
 {
+	int a = va_arg(ap, int);
 	int i, j;
 	int bi_num[32]; /*assuming that the int is 32 bit */
 	int b = a;
