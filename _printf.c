@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * our_printf - our own implementation of the printf function
+ * _printf - our own implementation of the printf function
  *
  * @format: the string with format specifiers
  *
  * Return: the number of characters printed
  */
 
-int our_printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	unsigned int printed_chars = 0;
 	unsigned int i;

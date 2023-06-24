@@ -42,6 +42,6 @@ int print_rot13(va_list ap);
 int print_binary(va_list ap);
 int print_rev_str(va_list ap);
 int _strlen(const char *string);
-int our_printf(const char *format, ...);
+int _printf(const char *format, ...);
 int _putchar(char c);
 #endif
