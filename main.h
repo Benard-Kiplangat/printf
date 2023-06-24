@@ -21,6 +21,7 @@ struct converters
 
 typedef struct converters converter;
 
+int print_parser(const char *format, va_list ap);
 int print_chars(const char *string);
 int print_int(const int a);
 int print_binary(const int a);

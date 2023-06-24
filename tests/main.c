@@ -3,11 +3,9 @@
 
 int main(void)
 {
-	char *strng = "This is another test string\n";
+	char *strng = "This is another test string";
 
-	print_binary(13);
-	print_rev_str(strng);
-	our_printf("This is a test string\n");
+	our_printf("This is a test %s string\n", strng);
 
 	return (0);
 }
