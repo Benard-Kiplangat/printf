@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _putchar - a funcion that writes a character c to stdout
+ * print_char - a funcion that writes a character c to stdout
  *
- * @c: The character to print
+ * @ap: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
@@ -11,7 +11,7 @@
 
 int print_char(va_list ap)
 {
-	char c = va_arg(ap, int);
+	char c = va_arg(ap, unsigned int);
 
 	return (write(1, &c, 1));
 }

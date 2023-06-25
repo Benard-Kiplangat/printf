@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _putchar - a funcion that writes a character c to stdout
+ * print_percent- a funcion that prints '%' character to stdout
  *
- * @c: The character to print
+ * @ap: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.

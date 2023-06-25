@@ -4,16 +4,16 @@
  * print_binary - a function that convert ints to binary
  * and then prints them
  *
- * @a: the integer to convert and print
+ * @ap: the integer to convert and print
  *
  * Return: number of digits printed
  */
 
 int print_binary(va_list ap)
 {
-	int a = va_arg(ap, int);
+	int a = va_arg(ap, unsigned int);
 	int i, j;
-	int bi_num[32]; /*assuming that the int is 32 bit */
+	int bi_num[64]; /*assuming that the int is 64 bit */
 	int b = a;
 
 	for (i = 0; b > 0; i++)

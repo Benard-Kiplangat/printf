@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * rev_string - a function that reverses a string
+ * print_rev_str - a function that reverses and prints a string
  *
- * @string: the string to reverse
+ * @ap: the string to reverse
  *
  * Return: pointer to the reversed string
  */

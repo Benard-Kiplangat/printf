@@ -10,8 +10,7 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int printed_chars = 0;
-	unsigned int i;
+	int k = 0;
 	va_list ap;
 
 	/* check if format is null or contains only % */
@@ -21,8 +20,8 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 
 	/* testing _putchar.c */
-	print_parser(format, ap);
+	k = k + print_parser(format, ap);
 
 	va_end(ap);
-	return (printed_chars);
+	return (k);
 }
