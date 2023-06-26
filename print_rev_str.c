@@ -15,6 +15,8 @@ int print_rev_str(va_list ap)
 	int lenn = _strlen(string);
 /*count string chars excluding nullbyte */
 
+	if (string == NULL)
+		return (-1);
 	i = lenn;
 	for (; lenn >= 0; lenn--)
 		_putchar(string[lenn]);

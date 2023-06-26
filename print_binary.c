@@ -16,6 +16,8 @@ int print_binary(va_list ap)
 	int bi_num[64]; /*assuming that the int is 64 bit */
 	int b = a;
 
+	if (a == '\0')
+		return (-1);
 	for (i = 0; b > 0; i++)
 	{
 		bi_num[i] = b % 2;

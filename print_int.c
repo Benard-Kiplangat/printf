@@ -12,6 +12,8 @@ int print_int(va_list ap)
 	int rev_num = 0;
 	int lenn = 10;
 
+	if (a == '\0')
+		return (-1);
 	if (a < 0)
 	{
 		a = -a;

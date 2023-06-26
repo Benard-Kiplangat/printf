@@ -34,5 +34,7 @@ int print_address(va_list ap)
 			j++;
 		}
 	}
+	else
+		return (-1);
 	return (j);
 }

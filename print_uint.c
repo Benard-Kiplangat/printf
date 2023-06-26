@@ -17,6 +17,8 @@ int print_uint(va_list ap)
 	int rev_num = 0;
 	int lenn = 10;
 
+	if (a == '\0')
+		return (-1);
 	b = a;
 /* as long as the number is > 10 there are multiple digits */
 	for (i = 0; (b / 10) > 0; i++)

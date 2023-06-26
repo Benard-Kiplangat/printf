@@ -14,6 +14,8 @@ int print_nonpr(va_list ap)
 	char *string = va_arg(ap, char *);
 	unsigned int i, k = 0;
 
+	if (string == NULL)
+		return (-1);
 	for (i = 0; string[i] != '\0'; i++)
 	{
 		if ((string[i] > 0 && string[i] < 32) || string[i] >= 127)

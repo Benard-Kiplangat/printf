@@ -10,9 +10,11 @@
 
 int print_chars(va_list ap)
 {
-	char *string = va_arg(ap, char *);
 	int i;
+	char *string = va_arg(ap, char *);
 
+	if (string == NULL)
+		return (0);
 	for (i = 0; string[i] != '\0'; i++)
 		_putchar(string[i]);
 	return (i);
