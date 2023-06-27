@@ -34,7 +34,7 @@ int print_HEX(va_list ap)
 	if (a == '\0')
 	{
 		_putchar('0');
-		return (-1);
+		return (1);
 	}
 	for (i = 0; b > 0; i++)
 	{
