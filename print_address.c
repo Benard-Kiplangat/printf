@@ -35,6 +35,12 @@ int print_address(va_list ap)
 		}
 	}
 	else
-		return (-1);
+	{
+		char *nul = "(null)";
+
+		for (i = 0; nul[i] != '\0'; i++)
+			_putchar(nul[i]);
+		return (i);
+	}
 	return (j);
 }

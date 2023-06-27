@@ -21,8 +21,9 @@ int print_rev_str(va_list ap)
 		char *nul = "(null)";
 
 		for (i = 0; i <= 6; i++)
-			_putchar(string[lenn];
+			_putchar(nul[lenn]);
 		return (i);
+	}
 	for (; lenn >= 0; lenn--)
 		_putchar(string[lenn]);
 	return (i);
