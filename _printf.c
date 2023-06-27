@@ -1,27 +1,68 @@
 #include "main.h"
 
 /**
- * _printf - our own implementation of the printf function
+ * _printf - this function emulate the behaviour of
+ * - the standard printf function
  *
- * @format: the string with format specifiers
+ * @format: a pointer to a constant format string
+ * - that specifies the output format
  *
  * Return: the number of characters printed
  */
 
+typedef struct
+{
+	char specifier;
+	int (*function)(va_list);
+} formatSpecifier;
+
 int _printf(const char *format, ...)
 {
-	int k = 0;
-	va_list ap;
+	va_list args;
 
-	/* check if format is null or contains only % */
-	if (!format || (format[0] == '%' && format[1] != '\0'))
-		return (-1);
-	/* Now that format is not null, continue to operate on it */
-	va_start(ap, format);
+	va_start(args, format);
 
-	/* testing _putchar.c */
-	k = k + print_parser(format, ap);
+formatSpecifier specifiers[] = {
+	{'d', print_int},
+	/* Add %i specifier */
+	{'i', print_int},
+	{'b', print_binary},
+	{'%', print_percent},
+	{'s', print_chars},
+	{'u', print_uint},
+	{'o', print_octal},
+	{'x', print_hexadecimal},
+	{'X', print_hexadecimal_uppercase},
+	{'c', print_char},
+	{'p', print_address},
+};
+int show_chars = 0;
 
-	va_end(ap);
-	return (k);
+int x = 0;
+
+int y = 0;
+
+for (; format[x] != '\0'; x++)
+{
+	if (format[x] == '%')
+	{
+		char converter = format[x + 1];
+
+		for (; y < sizeof(specifiers) / sizeof(specifiers[0]); y++)
+		{
+			if (specifiers[j].converter == converter)
+			{
+				show_chars += specifiers[y].function(args);
+				break;
+			}
+		}
+		x++;
+	} else
+	{
+		_putchar(format[x]);
+		show_chars++;
+	}
+}
+va_end(args);
+return (show_chars);
 }
