@@ -4,6 +4,18 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <limits.h>
+
+/**
+ * struct printers - struct to store conversion specifiers and their functions
+ * @fmts: conversion specifiers
+ * @f: functions to handle the specifiers
+ */
+struct printers
+{
+	char fmts;
+	int (*f)(va_list);
+};
 
 int print_char(va_list ap);
 int print_parser(const char *format, va_list ap);
