@@ -15,7 +15,13 @@ int print_nonpr(va_list ap)
 	unsigned int i, k = 0;
 
 	if (string == NULL)
-		return (-1);
+	{
+		char *nul = "(null)";
+
+		for (i = 0; nul[i] != '\0'; i++)
+			_putchar(nul[i]);
+		return (i);
+	}
 	for (i = 0; string[i] != '\0'; i++)
 	{
 		if ((string[i] > 0 && string[i] < 32) || string[i] >= 127)
