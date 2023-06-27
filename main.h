@@ -7,15 +7,18 @@
 #include <limits.h>
 
 /**
- * struct printers - struct to store conversion specifiers and their functions
- * @fmts: conversion specifiers
- * @f: functions to handle the specifiers
+ * struct printers - a struct to store print functions
+ * @fmts: conversion specifier strings
+ * @f: function pointer to the print functions
  */
+
 struct printers
 {
 	char fmts;
-	int (*f)(va_list);
+	int (*f)(va_list ap);
 };
+
+typedef struct printers pr;
 
 int print_char(va_list ap);
 int print_parser(const char *format, va_list ap);
@@ -30,10 +33,10 @@ int print_hex(va_list ap);
 int print_HEX(va_list ap);
 int print_HEXX(unsigned int b);
 int print_nonpr(va_list ap);
-int print_address(va_list ap);
+int print_addr(va_list ap);
 int print_rot13(va_list ap);
 int print_binary(va_list ap);
-int print_rev_str(va_list ap);
+int print_rev(va_list ap);
 int _strlen(const char *string);
 int _printf(const char *format, ...);
 int _putchar(char c);

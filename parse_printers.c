@@ -9,16 +9,13 @@
 int print_parser(const char *format, va_list ap)
 {
 int j, i = 0, count = 0;
-/**
- * struct printers - struct to store conversion specifiers
- * and their functions
- */
-struct printers print_funcs[] = {
+
+pr print_funcs[] = {
 	{'c', print_char}, {'s', print_chars}, {'%', print_percent},
 	{'d', print_int}, {'i', print_int}, {'b', print_binary},
 	{'u', print_uint}, {'o', print_octal}, {'x', print_hex},
-	{'X', print_HEX}, {'S', print_nonpr}, {'p', print_address},
-	{'r', print_rev_str},/* {'R', print_rot13} */
+	{'X', print_HEX}, {'S', print_nonpr}, {'p', print_addr},
+	{'r', print_rev}, {'R', print_rot13}
 };
 while (format[i] != '\0')
 {/* if the next character is a conversion specifier */
@@ -44,7 +41,6 @@ while (format[i] != '\0')
 		_putchar(format[i]);
 		i++;
 		count++;
-	}
-}
+	}}
 return (count);
 }

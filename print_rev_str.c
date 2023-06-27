@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * print_rev_str - a function that reverses and prints a string
+ * print_rev - a function that reverses and prints a string
  *
  * @ap: the string to reverse
  *
  * Return: pointer to the reversed string
  */
 
-int print_rev_str(va_list ap)
+int print_rev(va_list ap)
 {
 	char *string = va_arg(ap, char *);
 	int i;
