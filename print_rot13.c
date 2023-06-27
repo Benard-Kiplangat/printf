@@ -34,7 +34,6 @@ int print_rot13(va_list ap)
 				_putchar(r[j]);
 				break;
 			}
-			j++;
 		}
 		if (k == 10)
 			_putchar(string[i]);

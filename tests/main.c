@@ -12,7 +12,7 @@ int main(void)
 	printf("Len:[%d]\n", len);
 	printf("Len1:[%d]\n\n", len2);
 	
-	len = _printf("A %c%c%s %R sentence\n", 's', 'i', "mple", "vsizplr");
+	len = _printf("A %c%c%s %R sentence\n", 's', 'i', "mple", "fvzcyr");
 	len2 = printf("A %c%c%s sentence\n", 's', 'i', "mple");
 	printf("Len:[%d]\n", len);
 	printf("Len1:[%d]\n\n", len2);
