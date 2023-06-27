@@ -10,14 +10,14 @@
 
 int print_rot13(va_list ap)
 {
-	int i, j;
+	int i = 0, j = 0, k = 10;
 	char *string = va_arg(ap, char *);
 	char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char r[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	if (string == NULL)
 	{
-		char *nul = "(null)";
+		char *nul = "(avyy)";
 
 		write(1, nul, 6);
 		return (8);
@@ -25,12 +25,19 @@ int print_rot13(va_list ap)
 
 	for (i = 0; string[i] != '\0'; i++)
 	{
-		while (string[i] != s[j] && s[j] != '\0')
+		k = 10;
+		for (j = 0; s[j] != '\0'; j++)
+		{
+			if (string[i] == s[j])
+			{
+				k = 11;
+				_putchar(r[j]);
+				break;
+			}
 			j++;
-		if (s[j] != '\0')
-			string[i] = r[j];
+		}
+		if (k == 10)
+			_putchar(string[i]);
 	}
-	for (i = 0; string[i] != '\0'; i++)
-		_putchar(string[i]);
 	return (i);
 }
