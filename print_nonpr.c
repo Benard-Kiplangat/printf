@@ -14,12 +14,25 @@ int print_nonpr(va_list ap)
 	char *string = va_arg(ap, char *);
 	unsigned int i, k = 0;
 
+	if (string == NULL)
+	{
+		char *nul = "(null)";
+
+		for (i = 0; nul[i] != '\0'; i++)
+			_putchar(nul[i]);
+		return (i);
+	}
 	for (i = 0; string[i] != '\0'; i++)
 	{
 		if ((string[i] > 0 && string[i] < 32) || string[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
+			if (string[i] < 16)
+			{
+				_putchar('0');
+				k++;
+			}
 			k = k + 2;
 			k += print_HEXX(string[i]);
 		}
@@ -40,12 +53,12 @@ int print_nonpr(va_list ap)
 
 int print_HEXX(unsigned int b)
 {
-	int i, k, j = 0;
-	int bi_num[64]; /* assuming that the int is 64 bit */
+	int i, j = 0;
+	char char_num[32]; /* assuming that the int is 32 bit */
 
 	for (i = 0; b > 0; i++)
 	{
-		bi_num[i] = HEX_digit(b % 16);
+		char_num[i] = HEX_digit(b % 16);
 		b = b / 16;
 	}
 	j = i - 1; /* subtracted 1 for the last digit */
@@ -53,10 +66,9 @@ int print_HEXX(unsigned int b)
 	while (j >= 0)
 	{
 		/* printing in reverse the characters */
-		_putchar(bi_num[j] + '0');
+		_putchar(char_num[j]);
 		j--;
-		k++;
 	}
 
-	return (k);
+	return (i - 1);
 }

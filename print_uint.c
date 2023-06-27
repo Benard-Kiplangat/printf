@@ -1,48 +1,32 @@
 #include "main.h"
-
 /**
- * print_uint - a function that converts unsigned ints to strings
- * and prints them
- *
+ * print_uint - a function that converts unsigned ints to string and prints
  * @ap: the integer to print
- *
  * Return: the number of characters printed
  */
-
 int print_uint(va_list ap)
 {
 	unsigned int a = va_arg(ap, unsigned int);
-	int i, k = 0, j = 0;
-	unsigned int b;
-	int rev_num = 0;
-	int lenn = 10;
+	int i = 0, k = 0, j = 0;
+	char rev_num[64];
 
-	b = a;
+	if (a == '\0')
+	{
+		_putchar('0');
+		k++;
+		return (k);
+	}
 /* as long as the number is > 10 there are multiple digits */
-	for (i = 0; (b / 10) > 0; i++)
+	for (; (a / 10) > 0; i++)
 	{
-		b = b / 10; /* truncating the last digit */
+		rev_num[i] = '0' + (a % 10);
+		a = a / 10; /* truncating the last digit */
 	}
-/* i is now the number of digits in the number */
-
-/* finding the place value of each digit */
-	while (j < i - 1)
-	{
-		lenn *= 10;
-		j++;
-	}
-
-	for (j = 0; j <= i; j++)
-	{
-		rev_num = rev_num + ((a % 10) * lenn);
-		lenn = lenn / 10;
-		a = a / 10;
-	}
+	rev_num[i] = '0' + (a % 10);
 /* printing the digits of the int */
-	for (i = 0; i < j; i++)
+	for (j = 0; i >= j; i--)
 	{
-		_putchar(rev_num % 10 + '0');
-		rev_num = rev_num / 10;
+		_putchar(rev_num[i]);
 		k++;
 	}
 	return (k);

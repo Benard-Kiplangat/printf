@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * print_address - a funtion that prints pointer address
+ * print_addr - a funtion that prints pointer address
  * we included the stdint library to provide an intergral pointer capable of
  * holding a pointer.
  *
@@ -11,7 +11,7 @@
  * Return: the number of chars printed
  */
 
-int print_address(va_list ap)
+int print_addr(va_list ap)
 {
 	void *p = va_arg(ap, void *);
 	uintptr_t addr;
@@ -33,6 +33,14 @@ int print_address(va_list ap)
 			i = i - 4;
 			j++;
 		}
+	}
+	else
+	{
+		char *nul = "(null)";
+
+		for (i = 0; nul[i] != '\0'; i++)
+			_putchar(nul[i]);
+		return (i);
 	}
 	return (j);
 }

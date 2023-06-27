@@ -13,5 +13,7 @@ int print_char(va_list ap)
 {
 	char c = va_arg(ap, unsigned int);
 
+	if (c == '\0')
+		return (-1);
 	return (write(1, &c, 1));
 }
