@@ -27,9 +27,9 @@ while (format[i] != '\0')
 		if (format[i + 1] == '\0')
 			return (-1);
 		j = 0;
-		while (j < 14 && format[i + 1] != print_funcs[j].fmts)
+		while (j <= 14 && format[i + 1] != print_funcs[j].fmts)
 			j++;
-		if (j < 14)
+		if (j < 15)
 			count = count + print_funcs[j].f(ap);
 		else /* handle flags */
 		{

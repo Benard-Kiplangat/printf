@@ -12,11 +12,14 @@ int print_octal(va_list ap)
 {
 	unsigned int a = va_arg(ap, unsigned int);
 	unsigned int b = a;
-	int i, k, j = 0;
+	int i, k = 0, j = 0;
 	int bi_num[64]; /* assuming that the int is 64 bit */
 
 	if (a == '\0')
-		return (-1);
+	{
+		_putchar('0');
+		return (1);
+	}
 	for (i = 0; b > 0; i++)
 	{
 		bi_num[i] = b % 8;

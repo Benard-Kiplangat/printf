@@ -1,6 +1,20 @@
 #include "main.h"
 
 /**
+ * bin_printer - binary printer
+ *
+ * @a: integer to convert
+ *
+ * Return: always 0
+ */
+
+void bin_printer(unsigned int a)
+{
+	if (a > 1)
+		bin_printer(a / 2);
+	_putchar('0' + (a % 2));
+}
+/**
  * print_binary - a function that convert ints to binary
  * and then prints them
  *
@@ -11,25 +25,19 @@
 
 int print_binary(va_list ap)
 {
-	int a = va_arg(ap, unsigned int);
-	int i, j;
-	int bi_num[64]; /*assuming that the int is 64 bit */
-	int b = a;
+	unsigned int a = va_arg(ap, unsigned int);
+	int k = 0;
+	unsigned int b = a;
 
 	if (a == '\0')
-		return (-1);
-	for (i = 0; b > 0; i++)
 	{
-		bi_num[i] = b % 2;
+		_putchar('0');
+		k++;
+		return (k);
+	}
+	bin_printer(a);
+
+	for (; b / 2; k++)
 		b = b / 2;
-	}
-	j = i - 1;
-
-	while (j >= 0)
-	{
-		_putchar(bi_num[j] + '0');
-		j--;
-	}
-
-	return (i);
+	return (k + 1);
 }

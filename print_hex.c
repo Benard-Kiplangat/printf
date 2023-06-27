@@ -31,7 +31,10 @@ int print_hex(va_list ap)
 	char bi_num[64]; /* assuming that the int is 64 bit */
 
 	if (a == '\0')
-		return (-1);
+	{
+		_putchar('0');
+		return (1);
+	}
 	for (i = 0; a > 0; i++)
 	{
 		bi_num[i] = hex_digit((a % 16));
@@ -46,5 +49,5 @@ int print_hex(va_list ap)
 		k++;
 	}
 
-	return (k);
+	return (k - 1);
 }
