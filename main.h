@@ -16,19 +16,6 @@ struct printers
 	char fmts;
 	int (*f)(va_list);
 };
-#include <limits.h>
-
-/**
- * struct printers - a struct to store print functions
- * @fmts: conversion specifier strings
- * @f: function pointer to the print functions
- */
-
-struct printers
-{
-	char fmts;
-	int (*f)(va_list ap);
-};
 
 typedef struct printers pr;
 
