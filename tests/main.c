@@ -1,39 +1,47 @@
-﻿#include <stdio.h>
-#include "../main.h"
+﻿#include "../main.h"
+#include <limits.h>
 
 int main(void)
 {
 	int len = 0;
 	int len2 = 0;
+	unsigned int ui = (unsigned int)INT_MAX + 1024;
+
+	printf ("XXX: \n");
 	
-	len = _printf("A %s sentence\n", "simple");
-	len2 = printf("A %s sentence\n", "simple");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
-	
-	len2 = printf("A %c%c%s sentence\n", 's', 'i', "mple");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
+	len = _printf("X = %X\n", ui);
+	len2 = printf("X = %X\n", ui);
 
-	len = _printf("A simple %5 entence\n");
-	len2 = printf("A simple %5 entence\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
+	_printf("len [%i]\nlen2 [%i]\n", len, len2);
+	printf("len [%i]\nlen2 [%i]\n", len, len2);
 
-	len = _printf("Percentage: %%\n");
-	len2 = printf("Percentage: %%\n");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
+	printf ("xxx: \n");
+        
+	len = _printf("x = %x\n", ui);
+        len2 = printf("x = %x\n", ui);
 
-	len = _printf("%");
-	len2 = printf("%");
-	printf("Len:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);
+        _printf("len [%i]\nlen2 [%i]\n", len, len2);
+        printf("len [%i]\nlen2 [%i]\n", len, len2);
 
-	len = _printf("A simple sentence%");
-	len2 = printf("\nA simple sentence%");
-	printf("\nLen:[%d]\n", len);
-	printf("Len1:[%d]\n\n", len2);	
+	printf ("ooo: \n");
+        len = _printf("o = %o\n", ui);
+        len2 = printf("o = %o\n", ui);
 
+        _printf("len [%i]\nlen2 [%i]\n", len, len2);
+        printf("len [%i]\nlen2 [%i]\n", len, len2);
+
+	printf ("bbb: \n");
+        len = _printf("b = %b\n", ui);
+        len2 = printf("b = %s\n", "10000000000000000000001111111111");
+
+        _printf("len [%i]\nlen2 [%i]\n", len, len2);
+        printf("len [%i]\nlen2 [%i]\n", len, len2);
+
+	printf ("uuu: \n");
+        len = _printf("ui = %u\n", ui);
+        len2 = printf("ui = %u\n", ui);
+
+        _printf("len [%i]\nlen2 [%i]\n", len, len2);
+        printf("len [%i]\nlen2 [%i]\n", len, len2);
 	return (0);
 }
