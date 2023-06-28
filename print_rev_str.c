@@ -5,7 +5,7 @@
  *
  * @ap: the string to reverse
  *
- * Return: pointer to the reversed string
+ * Return:  return pointer to the reversed string
  */
 
 int print_rev(va_list ap)
