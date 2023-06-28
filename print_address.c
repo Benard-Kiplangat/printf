@@ -36,7 +36,7 @@ int print_addr(va_list ap)
 	}
 	else
 	{
-		char *nul = "(null)";
+		char *nul = "(nil)";
 
 		for (i = 0; nul[i] != '\0'; i++)
 			_putchar(nul[i]);

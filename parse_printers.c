@@ -8,7 +8,7 @@
  */
 int print_parser(const char *format, va_list ap)
 {
-int j, i = 0, count = 0;
+int j = 0, i = 0, count = 0;
 
 pr print_funcs[] = {
 	{'c', print_char}, {'s', print_chars}, {'%', print_percent},
