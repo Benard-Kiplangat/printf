@@ -10,7 +10,7 @@ int print_uint(va_list ap)
 	int i = 0, k = 0, j = 0;
 	char rev_num[64];
 
-	if (a == '\0')
+	if (a == '\0' || a == 0)
 	{
 		_putchar('0');
 		k++;

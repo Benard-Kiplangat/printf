@@ -36,6 +36,11 @@ int print_HEX(va_list ap)
 		_putchar('0');
 		return (1);
 	}
+	if (a == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	for (i = 0; b > 0; i++)
 	{
 		bi_num[i] = HEX_digit(b % 16);
