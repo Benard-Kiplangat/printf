@@ -26,7 +26,7 @@ int main()
     return 0;
 }
 ```
-### The _printf function surported spend specifiers
+### The _printf function surported conversion specifiers
 
 - %c for printing chars
 - %s for printing strings
