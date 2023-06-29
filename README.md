@@ -28,16 +28,16 @@ int main()
 ```
 ### The _printf function surported spend specifiers
 
-%c for printing chars
-%s for printing strings
-%S for printing strings with Non-printable in hex
-%d for printing decimals
-%i for printing integers
-%u for printing unsigned int 
-%X for printing hex in uppercase
-%x for printing hex in lowercase
-%b for printing binary
-%o for printing octal
-%r for printing reversed strings 
-%R for printing ROT13'ed strings 
-%p for printing memory addres
+- %c for printing chars
+- %s for printing strings
+- %S for printing strings with Non-printable in hex
+- %d for printing decimals
+- %i for printing integers
+- %u for printing unsigned int 
+- %X for printing hex in uppercase
+- %x for printing hex in lowercase
+- %b for printing binary
+- %o for printing octal
+- %r for printing reversed strings 
+- %R for printing ROT13'ed strings 
+- %p for printing memory addres
